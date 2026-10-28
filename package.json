@@ -1,0 +1,33 @@
+{
+  "name": "rs-toolstring",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Assembly Transform Lab - clean-room stepwise transform/join pipeline demo (synthetic data only)",
+  "scripts": {
+    "dev": "vite --port 4103 --strictPort",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsc --noEmit && vite build",
+    "pretest:e2e": "vite build",
+    "test:e2e": "playwright test",
+    "preview": "vite preview --port 4103 --strictPort --host 127.0.0.1",
+    "verify:build": "node scripts/verify-build.mjs",
+    "verify": "npm run typecheck && npm run test && npm run build && npm run test:e2e && npm run verify:build"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}
